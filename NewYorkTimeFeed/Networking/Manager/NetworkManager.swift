@@ -24,11 +24,11 @@ enum Result<String>{
 }
 
 struct NetworkManager {
-  static let environment : NetworkEnvironment = .production
-  static let APIKey = "phWiSmPz2k817GGZL3bqVYjVffwzauJK"
   
   var session: URLSession
   var router : Router<FeedAPI>!
+  static let environment : NetworkEnvironment = .production
+  static let APIKey = "phWiSmPz2k817GGZL3bqVYjVffwzauJK"
   
   init(urlSession: URLSession = .shared) {
     self.session = urlSession
@@ -42,20 +42,17 @@ struct NetworkManager {
       
       if error != nil {
         completion(nil, NetworkResponse.noInternet.rawValue)
-      }
-      
-      if let response = response as? HTTPURLResponse {
+      } else if let response = response as? HTTPURLResponse {
+        
         let result = self.handleNetworkResponse(response)
         switch result {
         case .success:
+          
           guard let responseData = data else {
             completion(nil, NetworkResponse.noData.rawValue)
             return
           }
           do {
-            print(responseData)
-            let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-            print(jsonData)
             let apiResponse = try JSONDecoder().decode(NewsFeedApiResponse.self, from: responseData)
             completion(apiResponse.results, nil)
           }catch {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+///Fetches and renders the popular news feed in the table view
 class NewsFeedsListVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
@@ -35,6 +36,9 @@ class NewsFeedsListVC: UIViewController {
     spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
+  /**
+   Fetches the most popular news feed
+   */
   func fetchMostPopularFeeds() {
     spinner.startAnimating()
     networkManager.getPopularNewsFeeds { feeds, error in
@@ -51,6 +55,7 @@ class NewsFeedsListVC: UIViewController {
   }
 }
 
+//MARK: UITableView Delegate and Datasource methods
 extension NewsFeedsListVC: UITableViewDelegate, UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {

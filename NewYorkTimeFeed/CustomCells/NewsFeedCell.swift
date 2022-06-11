@@ -7,6 +7,7 @@
 
 import UIKit
 
+///Custom NewsFeed UITableViewCell
 class NewsFeedCell: UITableViewCell {
   
   @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -25,7 +26,9 @@ class NewsFeedCell: UITableViewCell {
     // Configure the view for the selected state
   }
   
-  
+  /**
+   Configures the custom cell properties
+   */
   func configureCell(_ feedModel : NewsFeed){
     titleLabel.text = feedModel.title
     authorLabel.text = feedModel.byline

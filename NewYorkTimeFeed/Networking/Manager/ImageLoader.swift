@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Downloads images and cache
 class ImageLoader {
   
   var task: URLSessionDownloadTask!
@@ -19,7 +20,7 @@ class ImageLoader {
     self.cache = NSCache()
   }
   
-  //function to download image and cache 
+  //function to download thumbnail new feed image and cache
   func downloadImageWithPath(imagePath: String, completionHandler: @escaping (UIImage) -> ()) {
     if let image = self.cache.object(forKey: imagePath as NSString) {
       DispatchQueue.main.async {
@@ -38,6 +39,7 @@ class ImageLoader {
         
         if let data = try? Data(contentsOf: url) {
           let img: UIImage! = UIImage(data: data)
+          
           //Cache thumbnail image
           self.cache.setObject(img, forKey: imagePath as NSString)
           DispatchQueue.main.async {
