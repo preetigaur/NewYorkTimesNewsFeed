@@ -19,14 +19,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34K-4S-taw">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <rect key="frame" x="5" y="5" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="WUT-1A-2Vi"/>
                                 <constraint firstAttribute="width" constant="60" id="dHt-kY-PzT"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG7-TC-OYS">
-                            <rect key="frame" x="68" y="2" width="341" height="30"/>
+                            <rect key="frame" x="73" y="2" width="336" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="BNd-eg-6T5"/>
                             </constraints>
@@ -35,7 +35,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-Xt-aJY">
-                            <rect key="frame" x="68" y="34" width="30.5" height="20"/>
+                            <rect key="frame" x="73" y="34" width="30.5" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="ndU-2h-Lql"/>
                             </constraints>
@@ -48,10 +48,9 @@
                     <constraints>
                         <constraint firstItem="pG7-TC-OYS" firstAttribute="top" secondItem="PXf-OT-m6b" secondAttribute="top" constant="2" id="7Al-nb-hDu"/>
                         <constraint firstAttribute="height" constant="60" id="O3I-jx-s2f"/>
-                        <constraint firstItem="34K-4S-taw" firstAttribute="leading" secondItem="PXf-OT-m6b" secondAttribute="leading" id="OPq-kP-rpI"/>
-                        <constraint firstItem="34K-4S-taw" firstAttribute="top" secondItem="PXf-OT-m6b" secondAttribute="top" id="Qrp-e0-sU1"/>
+                        <constraint firstItem="34K-4S-taw" firstAttribute="leading" secondItem="PXf-OT-m6b" secondAttribute="leading" constant="5" id="OPq-kP-rpI"/>
+                        <constraint firstItem="34K-4S-taw" firstAttribute="top" secondItem="PXf-OT-m6b" secondAttribute="top" constant="5" id="Qrp-e0-sU1"/>
                         <constraint firstItem="KaH-Xt-aJY" firstAttribute="top" secondItem="pG7-TC-OYS" secondAttribute="bottom" constant="2" id="SOm-KL-PLY"/>
-                        <constraint firstAttribute="bottom" secondItem="34K-4S-taw" secondAttribute="bottom" id="Tbr-EL-6Pq"/>
                         <constraint firstItem="pG7-TC-OYS" firstAttribute="leading" secondItem="34K-4S-taw" secondAttribute="trailing" constant="8" symbolic="YES" id="W2A-Ki-1rk"/>
                         <constraint firstAttribute="trailing" secondItem="pG7-TC-OYS" secondAttribute="trailing" constant="5" id="WMn-VV-Bzs"/>
                         <constraint firstItem="KaH-Xt-aJY" firstAttribute="leading" secondItem="pG7-TC-OYS" secondAttribute="leading" id="Y27-0a-H8x"/>
